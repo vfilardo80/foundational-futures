@@ -4,7 +4,7 @@ const { copyFileSync, mkdirSync } = require('fs');
 const { join } = require('path');
 
 const OUT   = 'dist';
-const files = ['index.html', 'styles.css', 'script.js'];
+const files = ['index.html', 'about.html', 'styles.css', 'script.js'];
 
 mkdirSync(OUT, { recursive: true });
 
