@@ -7,28 +7,28 @@
    Design tokens
 ───────────────────────────────────────────── */
 :root {
-  --color-bg:           #060910;
-  --color-surface:      #0d1117;
-  --color-surface-2:    #161b27;
-  --color-border:       #1e2d40;
-  --color-border-light: #243448;
+  --color-bg:           #060d1a;
+  --color-surface:      #091424;
+  --color-surface-2:    #0f1f35;
+  --color-border:       #1a3050;
+  --color-border-light: #244470;
 
-  --color-accent:       #6366f1;
-  --color-accent-hover: #4f46e5;
-  --color-accent-glow:  rgba(99, 102, 241, 0.45);
-  --color-accent-soft:  rgba(99, 102, 241, 0.12);
+  --color-accent:       #f97316;
+  --color-accent-hover: #ea6c00;
+  --color-accent-glow:  rgba(249, 115, 22, 0.45);
+  --color-accent-soft:  rgba(249, 115, 22, 0.12);
 
-  --color-text:         #f0f4ff;
-  --color-muted:        #8b9ec0;
-  --color-faint:        #3d5068;
+  --color-text:         #f8fafc;
+  --color-muted:        #93b5d0;
+  --color-faint:        #2d5070;
 
-  --gradient-accent: linear-gradient(135deg, #818cf8 0%, #6366f1 50%, #a78bfa 100%);
+  --gradient-accent: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #fbbf24 100%);
   --gradient-hero:   radial-gradient(ellipse 90% 55% at 50% -5%,
-                       rgba(99,102,241,0.22) 0%,
-                       rgba(167,139,250,0.06) 50%,
+                       rgba(249,115,22,0.22) 0%,
+                       rgba(251,191,36,0.06) 50%,
                        transparent 70%);
-  --gradient-mesh:   radial-gradient(circle at 20% 80%, rgba(99,102,241,0.07) 0%, transparent 40%),
-                     radial-gradient(circle at 80% 20%, rgba(167,139,250,0.07) 0%, transparent 40%);
+  --gradient-mesh:   radial-gradient(circle at 20% 80%, rgba(249,115,22,0.07) 0%, transparent 40%),
+                     radial-gradient(circle at 80% 20%, rgba(251,191,36,0.07) 0%, transparent 40%);
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -63,21 +63,21 @@
    so every Bootstrap component inherits the design.
 ───────────────────────────────────────────── */
 [data-bs-theme="dark"] {
-  --bs-body-bg:                    #060910;
-  --bs-body-color:                 #f0f4ff;
+  --bs-body-bg:                    #060d1a;
+  --bs-body-color:                 #f8fafc;
   --bs-body-font-family:           'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --bs-primary:                    #6366f1;
-  --bs-primary-rgb:                99, 102, 241;
-  --bs-link-color:                 #818cf8;
-  --bs-link-hover-color:           #a78bfa;
-  --bs-border-color:               #1e2d40;
-  --bs-border-color-translucent:   rgba(30, 45, 64, 0.8);
-  --bs-secondary-bg:               #0d1117;
-  --bs-tertiary-bg:                #161b27;
-  --bs-secondary-color:            #8b9ec0;
-  --bs-tertiary-color:             #3d5068;
-  --bs-emphasis-color:             #f0f4ff;
-  --bs-focus-ring-color:           rgba(99, 102, 241, 0.28);
+  --bs-primary:                    #f97316;
+  --bs-primary-rgb:                249, 115, 22;
+  --bs-link-color:                 #fb923c;
+  --bs-link-hover-color:           #fbbf24;
+  --bs-border-color:               #1a3050;
+  --bs-border-color-translucent:   rgba(26, 48, 80, 0.8);
+  --bs-secondary-bg:               #091424;
+  --bs-tertiary-bg:                #0f1f35;
+  --bs-secondary-color:            #93b5d0;
+  --bs-tertiary-color:             #2d5070;
+  --bs-emphasis-color:             #f8fafc;
+  --bs-focus-ring-color:           rgba(249, 115, 22, 0.28);
   --bs-focus-ring-width:           3px;
 }
 
@@ -102,7 +102,7 @@ a, button { -webkit-tap-highlight-color: transparent; }
    Navbar
 ───────────────────────────────────────────── */
 .navbar {
-  background: rgba(6, 9, 16, 0.78) !important;
+  background: rgba(6, 13, 26, 0.78) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--color-border);
