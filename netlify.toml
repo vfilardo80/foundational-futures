@@ -1,0 +1,64 @@
+# ── Build ──────────────────────────────────────────────────────────────────────
+[build]
+  command = "node build.js"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Skip devDependencies (Jest etc.) — build.js only uses Node built-ins
+  NPM_FLAGS = "--omit=dev"
+
+# ── Headers ────────────────────────────────────────────────────────────────────
+
+# Security headers applied to every response
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent this site from being embedded in an iframe (clickjacking)
+    X-Frame-Options = "DENY"
+    # Stop browsers from MIME-sniffing a response away from the declared Content-Type
+    X-Content-Type-Options = "nosniff"
+    # Legacy XSS filter for older browsers
+    X-XSS-Protection = "1; mode=block"
+    # Only send the origin when navigating cross-origin
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Disable sensitive browser features not used by this site
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    # Enforce HTTPS for 2 years (Netlify always serves over HTTPS)
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    # Content Security Policy:
+    #   script-src  — own files + Bootstrap CDN (no unsafe-inline/eval)
+    #   style-src   — own files + Bootstrap CDN + Google Fonts CSS
+    #                 unsafe-inline required for Bootstrap collapse inline styles
+    #   font-src    — Google Fonts static files
+    #   img-src     — own files + data URIs (favicons etc.)
+    #   connect-src — XHR/fetch to own origin only
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';"
+
+# HTML — no browser cache so fresh deploys are always picked up
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, no-cache"
+
+# CSS — 1-day browser cache
+# Note: use content-hashed filenames (e.g. styles.abc123.css) and
+# switch to max-age=31536000, immutable if you add a build step that does so.
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# JS — 1-day browser cache (same caveat as above)
+[[headers]]
+  for = "/script.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── Redirects ──────────────────────────────────────────────────────────────────
+
+# Any path that doesn't match a file falls back to index.html with a 404 status
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 404
