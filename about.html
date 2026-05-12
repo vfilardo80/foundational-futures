@@ -9,6 +9,25 @@
 </head>
 <body>
 
+  <!--
+    Handprint symbol — same shape as index.html.
+    Must be defined per-page (SVG <use> only crosses same-document boundaries).
+  -->
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="handprint" viewBox="0 0 120 155">
+        <g fill="currentColor">
+          <ellipse cx="60"  cy="125" rx="42" ry="28"/>
+          <ellipse cx="18"  cy="96"  rx="13" ry="24" transform="rotate(-28 18 96)"/>
+          <ellipse cx="37"  cy="61"  rx="11" ry="31" transform="rotate(-9 37 61)"/>
+          <ellipse cx="59"  cy="50"  rx="11" ry="36"/>
+          <ellipse cx="81"  cy="56"  rx="11" ry="31" transform="rotate(10 81 56)"/>
+          <ellipse cx="99"  cy="72"  rx="10" ry="23" transform="rotate(24 99 72)"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
     <div class="container">
@@ -40,11 +59,19 @@
 
   <!-- About -->
   <section class="about-page">
-    <div class="paint-blobs" aria-hidden="true">
-      <span class="paint-blob blob-orange"></span>
-      <span class="paint-blob blob-blue"></span>
-      <span class="paint-blob blob-yellow"></span>
-      <span class="paint-blob blob-green"></span>
+    <div class="handprint-field" aria-hidden="true">
+      <!-- Top-right: large orange left hand -->
+      <svg class="hp hp-lg hp-orange" style="top:-30px;right:-22px;transform:scaleX(-1) rotate(16deg)"><use href="#handprint"/></svg>
+      <!-- Top-left: medium yellow right hand -->
+      <svg class="hp hp-md hp-yellow" style="top:-18px;left:-14px;transform:rotate(-24deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-right: medium blue left hand -->
+      <svg class="hp hp-md hp-blue"   style="bottom:-12px;right:48px;transform:scaleX(-1) rotate(-12deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-left: small green right hand -->
+      <svg class="hp hp-sm hp-green"  style="bottom:22px;left:34px;transform:rotate(22deg)"><use href="#handprint"/></svg>
+      <!-- Mid-left: tiny purple right hand -->
+      <svg class="hp hp-xs hp-purple" style="top:36%;left:8px;transform:rotate(-42deg)"><use href="#handprint"/></svg>
+      <!-- Mid-right: tiny pink left hand -->
+      <svg class="hp hp-xs hp-pink"   style="top:55%;right:10px;transform:scaleX(-1) rotate(35deg)"><use href="#handprint"/></svg>
     </div>
     <div class="container">
 

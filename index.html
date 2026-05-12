@@ -9,6 +9,25 @@
 </head>
 <body>
 
+  <!--
+    Handprint symbol — defined once, reused with <use href="#handprint">.
+    Shape: right hand (palm + 5 fingers). Mirror with CSS scaleX(-1) for left hand.
+  -->
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="handprint" viewBox="0 0 120 155">
+        <g fill="currentColor">
+          <ellipse cx="60"  cy="125" rx="42" ry="28"/>
+          <ellipse cx="18"  cy="96"  rx="13" ry="24" transform="rotate(-28 18 96)"/>
+          <ellipse cx="37"  cy="61"  rx="11" ry="31" transform="rotate(-9 37 61)"/>
+          <ellipse cx="59"  cy="50"  rx="11" ry="36"/>
+          <ellipse cx="81"  cy="56"  rx="11" ry="31" transform="rotate(10 81 56)"/>
+          <ellipse cx="99"  cy="72"  rx="10" ry="23" transform="rotate(24 99 72)"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
     <div class="container">
@@ -40,15 +59,22 @@
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <div class="paint-blobs" aria-hidden="true">
-      <span class="paint-blob blob-orange"></span>
-      <span class="paint-blob blob-blue"></span>
-      <span class="paint-blob blob-yellow"></span>
-      <span class="paint-blob blob-green"></span>
-      <span class="paint-blob blob-purple"></span>
+    <div class="handprint-field" aria-hidden="true">
+      <!-- Top-left: large orange right hand -->
+      <svg class="hp hp-xl hp-orange" style="top:-40px;left:-35px;transform:rotate(-22deg)"><use href="#handprint"/></svg>
+      <!-- Top-right: large blue left hand (mirrored) -->
+      <svg class="hp hp-lg hp-blue"   style="top:-30px;right:-25px;transform:scaleX(-1) rotate(18deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-right: medium yellow right hand -->
+      <svg class="hp hp-md hp-yellow" style="bottom:15px;right:55px;transform:rotate(-14deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-left: small green left hand -->
+      <svg class="hp hp-sm hp-green"  style="bottom:25px;left:45px;transform:scaleX(-1) rotate(28deg)"><use href="#handprint"/></svg>
+      <!-- Mid-right: small purple right hand -->
+      <svg class="hp hp-sm hp-purple" style="top:38%;right:18px;transform:rotate(42deg)"><use href="#handprint"/></svg>
+      <!-- Mid-left: tiny pink left hand -->
+      <svg class="hp hp-xs hp-pink"   style="top:44%;left:12px;transform:scaleX(-1) rotate(-36deg)"><use href="#handprint"/></svg>
     </div>
     <div class="hero-content">
-<h1>Foundational Futures<br /><span class="gradient-text">ABA Therapy</span></h1>
+      <h1>Foundational Futures<br /><span class="gradient-text">ABA Therapy</span></h1>
       <p>
         A place where foundations are built for brighter futures.
       </p>
@@ -61,6 +87,14 @@
 
   <!-- Contact -->
   <section class="contact" id="contact">
+    <div class="handprint-field" aria-hidden="true">
+      <!-- Top-right: medium orange left hand -->
+      <svg class="hp hp-md hp-orange" style="top:-22px;right:38px;transform:scaleX(-1) rotate(12deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-left: small blue right hand -->
+      <svg class="hp hp-sm hp-blue"   style="bottom:28px;left:22px;transform:rotate(-16deg)"><use href="#handprint"/></svg>
+      <!-- Bottom-right: tiny green right hand -->
+      <svg class="hp hp-xs hp-green"  style="bottom:18px;right:80px;transform:rotate(26deg)"><use href="#handprint"/></svg>
+    </div>
     <div class="container contact-inner">
       <div class="contact-header">
         <div class="hero-badge">Get in touch</div>
